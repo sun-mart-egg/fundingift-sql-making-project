@@ -13,9 +13,9 @@ public class Consumer {
     private String birthyear; //birthyear, yyyy
     private String birthday; //birthday, mmdd
     private String gender; //gender
-    private LocalDateTime createdAt; //created_at
-    private LocalDateTime updatedAt; //updated_at
-    private LocalDateTime deletedAt; //deleted_at
+    private String createdAt; //created_at
+    private String updatedAt; //updated_at
+    private String deletedAt; //deleted_at
 
     public static String getTable() {
         return "consumer";
@@ -75,9 +75,9 @@ public class Consumer {
         private String birthyear;
         private String birthday;
         private String gender;
-        private LocalDateTime createdAt;
-        private LocalDateTime updatedAt;
-        private LocalDateTime deletedAt;
+        private String createdAt;
+        private String updatedAt;
+        private String deletedAt;
 
         public Builder id(Long id) { this.id = id; return this; }
         public Builder socialId(String socialId) { this.socialId = socialId; return this; }
@@ -88,9 +88,9 @@ public class Consumer {
         public Builder birthyear(String birthyear) { this.birthyear = birthyear; return this; }
         public Builder birthday(String birthday) { this.birthday = birthday; return this; }
         public Builder gender(String gender) { this.gender = gender; return this; }
-        public Builder createdAt(LocalDateTime createdAt) { this.createdAt = createdAt; return this; }
-        public Builder updatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; return this; }
-        public Builder deletedAt(LocalDateTime deletedAt) { this.deletedAt = deletedAt; return this; }
+        public Builder createdAt(String createdAt) { this.createdAt = createdAt; return this; }
+        public Builder updatedAt(String updatedAt) { this.updatedAt = updatedAt; return this; }
+        public Builder deletedAt(String deletedAt) { this.deletedAt = deletedAt; return this; }
 
         public Consumer build() {
             return new Consumer(this);
