@@ -7,7 +7,10 @@ import static _common.util.RandomUtil.randomBoolean;
 public class FriendSQLService {
 
     // 서로 친구 insert SQL 생성
-    public static void makeMutualFriendInsertSQL(Long loginConsumerId, int startNumber, int endNumber) {
+    public static String makeMutualFriendInsertSQL(Long loginConsumerId, int startNumber, int endNumber) {
+
+        StringBuilder reulst = new StringBuilder("-- friend 더미 데이터 생성, " + loginConsumerId + 
+                "과 id " + startNumber + " ~ " + endNumber + " 서로 친구 데이터\n");
 
         InsertSQL friendInsertSQL = new InsertSQL(Friend.getTable(), Friend.getColumns());
         for(long i = startNumber; i <= endNumber; i++) {
@@ -28,6 +31,6 @@ public class FriendSQLService {
             friendInsertSQL.addValue(friend.getValues());
         }
 
-        System.out.println(friendInsertSQL.make());
+        return reulst.append(friendInsertSQL.make()).toString();
     }
 }

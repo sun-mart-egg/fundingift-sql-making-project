@@ -38,6 +38,6 @@ public class InsertSQL {
 
         sb.setCharAt(sb.length() - 2, ';');
 
-        return sb.toString();
+        return sb.append("\n").toString();
     }
 }

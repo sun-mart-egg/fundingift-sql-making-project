@@ -6,7 +6,11 @@ import static _common.util.RandomUtil.*;
 
 public class ConsumerSQLService {
 
-    public static void makeConsumerInsertSQL(int startNumber, int endNumber) {
+    public static String makeConsumerInsertSQL(int startNumber, int endNumber) {
+
+        StringBuilder result = new StringBuilder("-- consumer 더미 데이터 생성, id " + startNumber +
+                " ~ " + endNumber + ", social_id는 실제값이랑 차이가 있어야해서 -1로 둠\n");
+
         //consumer 더미 데이터 만들기
         InsertSQL consumerInsertSQL = new InsertSQL(Consumer.getTable(), Consumer.getColumns());
         for(long i = startNumber; i <= endNumber; i++) {
@@ -29,6 +33,6 @@ public class ConsumerSQLService {
             consumerInsertSQL.addValue(consumer.getValues());
         }
 
-        System.out.println(consumerInsertSQL.make());
+        return result.append(consumerInsertSQL.make()).toString();
     }
 }
