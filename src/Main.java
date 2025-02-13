@@ -1,6 +1,4 @@
-import consumer.ConsumerSQLService;
-import facade.WriteFacade;
-import friend.FriendSQLService;
+import _facade.WriteFacade;
 
 public class Main {
     public static void main(String[] args) {
