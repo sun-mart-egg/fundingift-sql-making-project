@@ -3,6 +3,7 @@ package _facade;
 import _common.util.ClipboardUtil;
 import consumer.ConsumerSQLService;
 import friend.FriendSQLService;
+import funding.FundingSQLService;
 
 public class WriteFacade {
 
@@ -10,9 +11,11 @@ public class WriteFacade {
 
         StringBuilder sb = new StringBuilder();
 
-        sb.append(ConsumerSQLService.makeConsumerInsertSQL(500, 1500));
+//        sb.append(ConsumerSQLService.makeConsumerInsertSQL(500, 1500));
 
-        sb.append(FriendSQLService.makeMutualFriendInsertSQL(29L, 500, 1500));
+//        sb.append(FriendSQLService.makeMutualFriendInsertSQL(29L, 500, 1500));
+
+        sb.append(FundingSQLService.makeFundingInsertSQL(5, 500, 1500));
 
         ClipboardUtil.copyToClipboard(sb.toString());
 
