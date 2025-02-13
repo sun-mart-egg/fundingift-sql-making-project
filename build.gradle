@@ -9,7 +9,6 @@ repositories {
 dependencies {
     // MyBatis 설정
     implementation 'org.mybatis:mybatis:3.5.13'
-    implementation 'org.mybatis:mybatis-spring:2.1.1'  // Spring 기반 프로젝트라면 추가
 
     // MySQL JDBC 드라이버
     implementation 'mysql:mysql-connector-java:8.0.33'
