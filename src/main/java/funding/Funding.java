@@ -7,7 +7,6 @@ import java.time.LocalDate;
 @Builder
 public class Funding {
 
-    private Long id;
     private Integer sumPrice;
     private Integer minPrice;
     private Integer targetPrice;
@@ -39,7 +38,7 @@ public class Funding {
 
     public static String getColumns() {
         return "(\n" +
-                "    funding_id, sum_price, min_price, target_price, \n" +
+                "    sum_price, min_price, target_price, \n" +
                 "    anniversary_date, start_date, end_date, title, \n" +
                 "    content, account_bank, account_no, name, \n" +
                 "    phone_number, default_addr, detail_addr, zip_code, \n" +
@@ -52,7 +51,6 @@ public class Funding {
         StringBuilder sb = new StringBuilder();
 
         sb.append("(")
-                .append(id).append(", ")
                 .append(sumPrice).append(", ")
                 .append(minPrice).append(", ")
                 .append(targetPrice).append(", ")
@@ -69,7 +67,7 @@ public class Funding {
                 .append("'").append(detailAddr).append("' , ")
                 .append("'").append(zipCode).append("' , ")
                 .append("'").append(fundingStatus).append("' , ")
-                .append(isPrivate? "b'0'" : "b'1'").append(", ")
+                .append(isPrivate? "b'1'" : "b'0'").append(", ")
                 .append(anniversaryCategoryId).append(", ")
                 .append(consumerId).append(", ")
                 .append(productId).append(", ")

@@ -40,10 +40,9 @@ public class FundingSQLService {
         for(long i = startNumber; i <= endNumber; i++) {
             for(int j = 0; j < cnt; j++) {
                 int random = generateRandomNumberInRange(0, 6);
-                Product p = products.get(index % totalIndex);
+                Product p = products.get(index++ % totalIndex);
 
                 Funding funding = Funding.builder()
-                        .id((long) 500 + index++)
                         .sumPrice(0)
                         .minPrice(generateFixedDigitRandomNumber(3))
                         .targetPrice(p.getPrice())

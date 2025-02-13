@@ -11,11 +11,11 @@ public class WriteFacade {
 
         StringBuilder sb = new StringBuilder();
 
-        sb.append(ConsumerSQLService.makeConsumerInsertSQL(500, 1500));
+//        sb.append(ConsumerSQLService.makeConsumerInsertSQL(2000, 3000));
 
-        sb.append(FriendSQLService.makeMutualFriendInsertSQL(29L, 500, 1500));
+        sb.append(FriendSQLService.makeMutualFriendInsertSQL(5L, 2000, 2300));
 
-        sb.append(FundingSQLService.makeFundingInsertSQL(5, 500, 1500));
+//        sb.append(FundingSQLService.makeFundingInsertSQL(5, 2000, 3000));
 
         ClipboardUtil.copyToClipboard(sb.toString());
 

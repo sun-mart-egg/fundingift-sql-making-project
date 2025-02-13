@@ -16,10 +16,10 @@ public class FriendSQLService {
         for(long i = startNumber; i <= endNumber; i++) {
 
             Friend friend = Friend.builder()
-                    .id(i)
                     .consumerId(loginConsumerId)
                     .toConsumerId(i)
-                    .isFavorite(randomBoolean())
+//                    .isFavorite(randomBoolean())
+                    .isFavorite(Boolean.FALSE)
                     .createdAt("CURRENT_TIMESTAMP")
                     .updatedAt("CURRENT_TIMESTAMP")
                     .deletedAt(null)
@@ -27,7 +27,7 @@ public class FriendSQLService {
 
             friendInsertSQL.addValue(friend.getValues());
 
-            friend.swapConsumerId(i + endNumber);
+            friend.swapConsumerId();
             friendInsertSQL.addValue(friend.getValues());
         }
 
