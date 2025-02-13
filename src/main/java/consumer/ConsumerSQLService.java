@@ -3,8 +3,11 @@ package consumer;
 import _common.sql.InsertSQL;
 
 import static _common.util.RandomUtil.*;
+import static _common.util.RandomUtil.generateRandomNumberInRange;
 
 public class ConsumerSQLService {
+
+    private static final String[] profileImageUrls = {"https://funding-gift.s3.ap-northeast-2.amazonaws.com/profile/snow.png", "https://funding-gift.s3.ap-northeast-2.amazonaws.com/profile/ggamza1.png", "https://funding-gift.s3.ap-northeast-2.amazonaws.com/profile/ggamza2.png"};
 
     public static String makeConsumerInsertSQL(int startNumber, int endNumber) {
 
@@ -19,7 +22,7 @@ public class ConsumerSQLService {
                     .socialId(String.valueOf(i * -1))
                     .email("test" + i + "@test.com")
                     .name("아무개" + i)
-                    .profileImageUrl(null)
+                    .profileImageUrl(profileImageUrls[generateRandomNumberInRange(0, 2)])
                     .phoneNumber("010" + generateFixedDigitRandomNumber(8))
                     .birthyear(generateRandomNumberInRange(1980, 2002) + "")
                     .birthday(String.format("%02d", generateRandomNumberInRange(1, 12))

@@ -9,7 +9,7 @@ public interface ProductMapper {
 
     @Select("""
         SELECT p.product_id AS id, 
-               MIN(po.product_option_id), 
+               MIN(po.product_option_id) AS product_option_id, 
                p.price
         FROM product p
         JOIN product_option po ON p.product_id = po.product_id
