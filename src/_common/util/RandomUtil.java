@@ -2,9 +2,9 @@ package _common.util;
 
 import java.util.Random;
 
-public class NumberUtil {
+public class RandomUtil {
 
-    public static int generateRandomNumberByDigit(int digits) {
+    public static int generateFixedDigitRandomNumber(int digits) {
         if (digits <= 0) {
             throw new IllegalArgumentException("자리수는 1 이상이어야 합니다.");
         }
@@ -23,5 +23,9 @@ public class NumberUtil {
 
         Random random = new Random();
         return random.nextInt(max - min + 1) + min;
+    }
+
+    public static boolean randomBoolean() {
+        return new Random().nextBoolean();
     }
 }

@@ -1,7 +1,5 @@
 package consumer;
 
-import java.time.LocalDateTime;
-
 public class Consumer {
 
     private Long id; //consumer_id
@@ -21,7 +19,7 @@ public class Consumer {
         return "consumer";
     }
 
-    public static String getColums() {
+    public static String getColumns() {
         return "(consumer_id, social_id, email, name, profile_image_url, phone_number, birthyear, birthday, gender, created_at, updated_at, deleted_at)";
     }
 
